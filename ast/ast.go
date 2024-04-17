@@ -36,6 +36,17 @@ type LetStatement struct {
 	Value Expression
 }
 
+type ReturnStatement struct {
+	Token       token.Token // The 'return' token
+	ReturnValue Expression
+}
+
+func (rs *ReturnStatement) statementNode() {
+	// mock function to help compiler with type checking
+}
+
+func (rs *ReturnStatement) TokenLiteral() string { return rs.Token.Literal }
+
 func (ls *LetStatement) statementNode() {
 	// mock function to help compiler with type checking
 }
